@@ -4,8 +4,7 @@
 /**
  * main - Entry point
  *
- * Description: Generates a random number and prints whether it is
- * positive, zero, or negative.
+ * Description: show the last digit of a randomly generated number.
  *
  * Return: Always 0 (Success)
  */
@@ -33,4 +32,3 @@ printf("and is less than 6 and not 0")
 }
 return (0);
 }
-
