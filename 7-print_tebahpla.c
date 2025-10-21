@@ -4,19 +4,22 @@
 /**
 	* main - Entry point
 	*
-	* Description: print alphabet minuscule et majuscules
+	* Description: print reverse de 0 a 9 - rev py
 	*
 	* Return: Always 0 (Success)
 	*/
 int main(void)
 {
-int n;
-for (n = 0; n < 10; n++)
+int c;
+
+for (c = 'z'; c >= 'a' ; c--)
 {
-putchar(n + '0');
+putchar(c);
 }
 {
 putchar('\n');
 }
 return (0);
 }
+
+
