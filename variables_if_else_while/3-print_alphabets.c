@@ -14,13 +14,12 @@ char c, i;
 
 for (i = 'a' ; i <= 'z'; i++)
 {
-	putchar(i);
+putchar(i);
 }
 for (c = 'A'; c <= 'Z'; c++)
 {
 putchar(c);
+putchar('\n');
 }
 return (0);
 }
-
-
