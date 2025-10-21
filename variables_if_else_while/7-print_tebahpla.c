@@ -12,9 +12,9 @@ int main(void)
 {
 int c;
 
-for (c = 9; c >= 0 ; c--)
+for (c = 'z'; c >= 'a' ; c--)
 {
-putchar(c + '0');
+putchar(c);
 }
 {
 putchar('\n');
