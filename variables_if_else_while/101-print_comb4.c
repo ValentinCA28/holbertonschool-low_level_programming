@@ -4,7 +4,7 @@
 /**
 	* main - Entry point
 	*
-	* Description: print alphabet minuscule et majuscules
+	* Description: print combinaison 3 chiffres
 	*
 	* Return: Always 0 (Success)
 	*/
