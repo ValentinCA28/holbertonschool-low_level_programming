@@ -1,14 +1,20 @@
-#include <unistd.h>
+#include "main.h"
 /**
- * main - Entry point
- *
- * Description: print __putchar.
- *
- * Return: Always 0 (Success)
- */
+*
+*
+* main - Point d’entrée du programme*
+* Return: Toujours 0 (Succès)*/
 int main(void)
 
 {
-write(1, "_putchar\n", 10);
+putchar ('_');
+_putchar ('p');
+_putchar ('u');
+_putchar ('t');
+_putchar ('c');
+_putchar ('h');
+_putchar ('a');
+_putchar ('r');
+_putchar ('\n');
 return (0);
 }
