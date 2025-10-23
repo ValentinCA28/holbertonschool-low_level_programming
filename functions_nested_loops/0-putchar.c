@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-*
-*
-* main - Point d’entrée du programme*
-* Return: Toujours 0 (Succès)
-*/
+	* main - Entry point
+	*
+	* Description: print _putchar
+	* Return: Always 0 (Success)
+	*/
 int main(void)
 
 {
