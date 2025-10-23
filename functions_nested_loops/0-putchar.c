@@ -7,6 +7,7 @@
  * Return: Always 0 (Success)
  */
 int main(void)
+
 {
 write(1, "__putchar\n", 10);
 return (0);
