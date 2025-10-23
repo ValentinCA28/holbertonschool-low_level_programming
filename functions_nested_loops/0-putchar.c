@@ -3,11 +3,12 @@
 *
 *
 * main - Point d’entrée du programme*
-* Return: Toujours 0 (Succès)*/
+* Return: Toujours 0 (Succès)
+*/
 int main(void)
 
 {
-putchar ('_');
+_putchar ('_');
 _putchar ('p');
 _putchar ('u');
 _putchar ('t');
