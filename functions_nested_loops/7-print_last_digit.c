@@ -1,21 +1,21 @@
 #include "main.h"
+
 /**
- * print_last_digit - Affiche le dernier chiffre d'un nombre
- * @a: Le nombre dont on veut afficher le dernier chiffre
+ * print_last_digit - prints the last digit of a number
+ * @n: The number to check
  *
- * Cette fonction calcule le dernier chiffre du nombre passé en paramètre,
- * l'affiche à l'aide de _putchar et retourne ce chiffre (toujours positif).
- *
- * Retour: Le dernier chiffre du nombre (toujours positif)
+ * Return: The value of the last digit
  */
-int print_last_digit(int a)
-
+int print_last_digit(int n)
 {
-	int last = a % 10;
+	int last_digit;
 
-	if (last < 0)
-		last = -last;
+	last_digit = n % 10;
 
-	_putchar(last + '0');
-	return (last);
+	if (last_digit < 0)
+		last_digit = -last_digit;
+
+	_putchar('0' + last_digit);
+
+	return (last_digit);
 }
