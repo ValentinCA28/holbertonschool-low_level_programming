@@ -19,9 +19,9 @@ trim_trailing_whitespace = true
 # Spécifique aux fichiers C / Header (.c, .h)
 # --------------------------
 [*.{c,h}]
-indent_style = space
-indent_size = 8
-tab_width = 8
+indent_style = tab
+indent_size = 4
+tab_width = 4
 max_line_length = 80
 
 # Betty veut des lignes de 80 caractères max et indentation de 8 espaces.
