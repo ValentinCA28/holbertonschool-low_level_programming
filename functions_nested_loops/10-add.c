@@ -1,12 +1,11 @@
 #include "main.h"
 /**
- * add - Additionne deux entiers
- * @a: premier entier
- * @b: deuxième entier
+ * add - Add 2 variables
+ * @a: first variable
+ * @b: second variable
  *
- * Retourne: la somme de a et b
+ * Return: sum a + b
  */
-#include "main.h"
 
 int add(int a, int b)
 {
