@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /*
- * jack_bauer - affiche toutes les minutes de la journée au format HH:MM
+ * jack_bauer - print every mins of day in the format HH:MM
  *
  * Description:
  *   Parcourt les heures de 0 à 23 et les minutes de 0 à 59. Pour chaque
