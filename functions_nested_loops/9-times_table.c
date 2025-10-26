@@ -13,41 +13,35 @@
  * Return: void
  */
 void times_table(void)
-
 {
-	int x;
-	int y;
-	int produit;
-	char buffer[42];
-	int i = 0;
+    int x;
+    int y;
+    int produit;
+    char buffer[42];
+    int i = 0;
 
-	for (x = 0; x <= 9; x++)
-	{
-		i = 0;
-		for (y = 0; y <= 9; y++)
-		{
-			produit = x * y;
-			if (produit >= 10)
-			{
-				buffer[i++] = '0' + (produit / 10);
-				buffer[i++] = '0' + (produit % 10);
-			}
-			else
-			{
+    for (x = 0; x <= 9; x++)
+    {
+        i = 0;
+        for (y = 0; y <= 9; y++)
+        {
+            produit = x * y;
+            if (produit >= 10)
+            {
+                buffer[i++] = '0' + (produit / 10);
+                buffer[i++] = '0' + (produit % 10);
+            }
+            else
+            {
 				buffer[i++] = ' ';
-				buffer[i++] = '0' + produit;
-			}
-
+                buffer[i++] = '0' + produit;
+            }
 			if (y < 9)
 			{
-				buffer[i++] = ',';
-				buffer[i++] = ' ';
+				buffer[i++] = ','; buffer[i++] = ' ';
 			}
-
 		}
-	if (x < 9)
-		buffer[i++] = '\n';
-
-	write(1, buffer, i);
-	}
+        _putchar('\n');
+        write(1, buffer, i);
+    }
 }
