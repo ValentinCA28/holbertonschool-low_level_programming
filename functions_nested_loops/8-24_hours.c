@@ -1,15 +1,27 @@
 #include "main.h"
 #include <unistd.h>
 
+/*
+ * jack_bauer - affiche toutes les minutes de la journée au format HH:MM
+ *
+ * Description:
+ *   Parcourt les heures de 0 à 23 et les minutes de 0 à 59. Pour chaque
+ *   couple (heure, minute) il remplit un petit buffer de 6 octets avec
+ *   le format "HH:MM\n" et écrit ce buffer sur la sortie standard
+ *   en utilisant la fonction système write(2).
+ *
+ *   Pas de retour (fonction void). On utilise write pour respecter les
+ *   contraintes d'exercices où printf n'est pas souhaité.
+ */
 void jack_bauer(void)
 
 {
-	char buffer [6];
+	char buffer[6];
 	int a, b;
 
 	for (a = 0; a < 24; a++)
 	{
-		for(b = 0; b < 60; b++)
+		for (b = 0; b < 60; b++)
 		{
 			buffer[0] = ('0' + (a / 10));
 			buffer[1] = ('0' + (a % 10));
