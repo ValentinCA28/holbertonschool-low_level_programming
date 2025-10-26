@@ -1,17 +1,15 @@
 #include "main.h"
 #include <unistd.h>
 
-/*
- * jack_bauer - print every mins of day in the format HH:MM
+/**
+ * jack_bauer - prints every minute of the day
  *
- * Description:
- *   Parcourt les heures de 0 à 23 et les minutes de 0 à 59. Pour chaque
- *   couple (heure, minute) il remplit un petit buffer de 6 octets avec
- *   le format "HH:MM\n" et écrit ce buffer sur la sortie standard
- *   en utilisant la fonction système write(2).
+ * Description: Parcourt les heures de 0 à 23 et les minutes de 0 à 59.
+ * Pour chaque couple (heure, minute) il remplit un petit buffer de 6
+ * octets avec le format "HH:MM\n" et écrit ce buffer sur la sortie
+ * standard en utilisant la fonction système write(2).
  *
- *   Pas de retour (fonction void). On utilise write pour respecter les
- *   contraintes d'exercices où printf n'est pas souhaité.
+ * Return: void
  */
 void jack_bauer(void)
 
