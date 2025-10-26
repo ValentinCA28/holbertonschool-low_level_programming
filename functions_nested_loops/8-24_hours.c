@@ -10,9 +10,7 @@ void jack_bauer(void)
 	{
 
 		for (b = 0; b < 60; b++)
-	}
-	{
-		_putchar('0' + b)
 
-	} _putchar(a + b);
+		printf("%02d:%02d\n", a, b);
+	}
 }
