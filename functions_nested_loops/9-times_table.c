@@ -18,19 +18,32 @@ void times_table(void)
 	int x;
 	int y;
 	int produit;
+	char buffer[39];
+	int i = 0;
 
 	for (x = 0; x <= 9; x++)
 	{
+		i = 0;
 		for (y = 0; y <= 9; y++)
-
 		{
 			produit = x * y;
-			printf("%d", produit);
+			if (produit >= 10)
 			{
-				if (y < 9)
-					printf(", ");
+				buffer[i++] = '0' + (produit / 10);
+				buffer[i++] = '0' + (produit % 10);
+			}
+			else
+			{
+				buffer[i++] = '0' + produit;
+			}
+
+			if (y < 9)
+			{
+				buffer[i++] = ',';
+				buffer[i++] = ' ';
 			}
 		}
-		printf("\n");
+	buffer[i++] = '\n';
+	write(1, buffer, i);
 	}
 }
