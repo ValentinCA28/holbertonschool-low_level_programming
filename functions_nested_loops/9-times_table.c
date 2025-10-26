@@ -34,6 +34,7 @@ void times_table(void)
 			}
 			else
 			{
+				buffer[i++] = ' ';
 				buffer[i++] = '0' + produit;
 			}
 
