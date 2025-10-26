@@ -46,9 +46,8 @@ void times_table(void)
 
 		}
 	if (x < 9)
-	{
 		buffer[i++] = '\n';
-	}
+
 	write(1, buffer, i);
 	}
 }
