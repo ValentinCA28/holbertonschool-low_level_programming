@@ -2,14 +2,13 @@
 #include <stdio.h>
 
 /**
- * reset_to_98 - Updates the value pointed to by a pointer
- * @n: Pointer to an integer
- * Description: Takes a pointer to an integer as parameter
- * and updates the value it points to to 98
+ * reset_to_98 - set the value an integer pointer points to to 98
+ * @n: pointer to an int to be updated
+ *
+ * Stores the value 98 at the memory location pointed to by @n.
+ * Return: void
  */
 void reset_to_98(int *n)
 {
 	*n = 98;
-
-	printf("Value of n =%d\n", *n);
 }
