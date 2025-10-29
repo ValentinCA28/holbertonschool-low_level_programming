@@ -43,5 +43,5 @@ int _atoi(char *s)
 			break;
 		i++;
 	}
-	return signe * (int)temp;
+	return (signe * (int)temp);
 }
