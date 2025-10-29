@@ -11,10 +11,9 @@ int _atoi(char *s)
 
 		while (s[i] != '\0')
 		{
-			if(s[i] == ' ')
+			while (s[i] == ' ')
 			{
 				i++;
-				continue;
 			}
 			if (s[i] == '-' || s[i] == '+')
 			{
@@ -31,7 +30,7 @@ int _atoi(char *s)
 					temp = temp * 10 + (s[i] - '0');
 					i++;
 				}
-			break;
+
 		}
 		return signe * (int)temp;
 }
