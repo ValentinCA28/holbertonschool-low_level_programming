@@ -9,16 +9,15 @@ int _atoi(char *s)
 	int signe = 1;
 	unsigned int temp = 0;
 
-		while (s[i] != '\0')
-		{
+
 			while (s[i] == ' ')
 			{
 				i++;
 			}
-			if (s[i] == '-' || s[i] == '+')
+			while (s[i] == '-' || s[i] == '+')
 			{
 				if(s[i] == '-')
-				signe = -signe;
+				signe = -1;
 				i++;
 			}
 			while (s[i] >= '0' && s[i] <= '9')
@@ -31,6 +30,5 @@ int _atoi(char *s)
 					i++;
 				}
 
-		}
 		return signe * (int)temp;
 }
