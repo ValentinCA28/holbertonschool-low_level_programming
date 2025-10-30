@@ -32,8 +32,7 @@ int _atoi(char *s)
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			found_digit = 1;
-			if (temp > (unsigned int)INT_MAX / 10 ||
-			    (temp == (unsigned int)INT_MAX / 10 && (s[i] - '0') > (INT_MAX % 10)))
+			if (temp >= (unsigned int)INT_MAX / 10 && (s[i] - '0') > (INT_MAX % 10))
 			{
 				return (signe == 1 ? INT_MAX : INT_MIN);
 			}
