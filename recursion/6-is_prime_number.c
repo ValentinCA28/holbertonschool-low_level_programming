@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * check_prime - recursively checks if n is prime starting from div
+ * check_prime - recursively checks if n is prime
  * @n: number to check
- * @div: current divisor to test
+ * @div: current divisor
  *
- * Return: 1 if n is prime, 0 otherwise
+ * Return: 1 if prime, 0 otherwise
  */
 int check_prime(int n, int div)
+
 {
 	if (div * div > n)
 	{
@@ -17,7 +18,7 @@ int check_prime(int n, int div)
 	{
 		return (0);
 	}
-	return check_prime(n, div + 2);
+	return (check_prime(n, div + 2));
 }
 
 /**
@@ -27,6 +28,7 @@ int check_prime(int n, int div)
  * Return: 1 if prime, 0 otherwise
  */
 int is_prime_number(int n)
+
 {
 	if (n <= 1)
 	{
@@ -40,5 +42,6 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	return check_prime(n, 3);
+		return (check_prime(n, 3));
+
 }
