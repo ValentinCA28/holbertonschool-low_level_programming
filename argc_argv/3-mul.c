@@ -54,9 +54,7 @@ int conv(char *str)
 
 int main(int argc, char *argv[])
 {
-	int a = conv(argv[1]);
-	int b = conv(argv[2]);
-	int result = a * b;
+	int a, b, result;
 
 	if (argc != 3)
 	{
@@ -70,7 +68,9 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-
+	a = conv(argv[1]);
+	b = conv(argv[2]);
+	result = a * b;
 
 	printf("%d\n", result);
 	return (0);
