@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * is_number - checks if string is a valid integer
+ * check_num - checks if string is a valid integer
  * @str: input string
  * Return: 1 if number, 0 otherwise
  */
@@ -52,6 +52,13 @@ int conv(char *str)
 	return (signe * result);
 }
 
+/**
+ * main - multiplies two numbers
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0 on success, 1 on error
+ */
 int main(int argc, char *argv[])
 {
 	int a, b, result;
