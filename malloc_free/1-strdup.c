@@ -27,13 +27,13 @@ char *_strdup(char *str)
 	x = malloc(sizeof(char) * (len + 1));
 	if (x  == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
 	for (i = 0; i <= len; i++)
 	{
 		x[i] = str[i];
 	}
-	return(x);
+	return (x);
 }
 
 
