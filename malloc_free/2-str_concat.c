@@ -3,11 +3,13 @@
 #include "main.h"
 
 /**
- * str_concat - Concatenates two strings into a newly allocated space in memory.
+ * str_concat - Concatenates two strings into
+ * a newly allocated space in memory.
  * @s1: First string (NULL is treated as an empty string).
  * @s2: Second string (NULL is treated as an empty string).
  *
- * Return: Pointer to the newly allocated concatenated string (null-terminated),
+ * Return: Pointer to the newly allocated
+ * concatenated string (null-terminated),
  *         or NULL if memory allocation fails.
  */
 char *str_concat(char *s1, char *s2)
