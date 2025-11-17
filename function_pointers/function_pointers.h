@@ -1,6 +1,8 @@
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
 
+#include <stddef.h>
+
 int _putchar(char c);
 void print_alphabet(void);
 void print_alphabet_x10(void);
@@ -29,6 +31,8 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
+
 void print_name(char *name, void (*f)(char *));
+void array_iterator(int *array, size_t size, void (*action)(int));
 
 #endif
