@@ -2,55 +2,49 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-typedef struct {
-    char spec;
-    char *fmt;
-} format_t;
-
-void print_all(const char *format, ...)
+void print_all(const char * const format, ...)
 {
-    format_t check[] = {
-        {'c', "%c"},
-        {'i', "%d"},
-        {'f', "%f"},
-        {'s', "%s"},
-        {'\0', NULL}
-    };
 
     va_list args;
     int i = 0;
     char *sep = "";
-    char *s;
 
     va_start(args, format);
 
     while (format && format[i])
     {
-        int j = 0;
-        while (check[j].spec != '\0')
-        {
-            if (format[i] == check[j].spec)
-            {
-                printf("%s", sep);
-                sep = ", ";
+		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's')
+		{
+			printf("%s", sep);
+			sep = ", ";
+		}
+		switch (format[i])
+		{
+			case 'c':
+			printf("%c", va_arg(args, int));
+			break;
+			case 'i':
+			printf("%d", va_arg(args, int));
+			break;
+			case 'f':
+			printf("%f", va_arg(args, double));
+			break;
+			case 's':
+			{
+				char *str = va_arg(args, char *);
+				if (!str)
+				{
+					printf("(nil)");
+				}
+				if (str)
+				{
+					printf("%s", str);
+				}
+				break;
+			}
 
-                if (check[j].spec == 's')
-                {
-                    s = va_arg(args, char *);
-                    printf("%s", s ? s : "(nil)");
-                }
-                if (check[j].spec != 's')
-                {
-                    if (check[j].spec == 'f')
-                        printf(check[j].fmt, va_arg(args, double));
-                    else
-                        printf(check[j].fmt, va_arg(args, int));
-                }
-                break;
-            }
-            j++;
-        }
-        i++;
+		}
+		i++;
     }
     printf("\n");
     va_end(args);
