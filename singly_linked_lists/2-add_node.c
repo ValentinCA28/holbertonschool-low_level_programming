@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 list_t *add_node(list_t **head, const char *str)
 {
 
@@ -18,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(new);
 		return (NULL);
 	}
-	new->len = strlen(str);
+	new->len = get_len(str);
 
 	new->next = *head;
 
