@@ -7,10 +7,6 @@
  * @head: double pointer to the head of the list
  * @str: string to be duplicated and stored in the new node
  *
- * Description: This function creates a new node, duplicates the given
- * string, calculates its length, and inserts the node at the beginning
- * of the list. Memory allocation is checked at each step.
- *
  * Return: the address of the new element, or NULL if it failed
  */
 list_t *add_node(list_t **head, const char *str)

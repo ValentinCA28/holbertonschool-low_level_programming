@@ -5,10 +5,6 @@
  * print_list - prints all the elements of a list_t list
  * @h: pointer to the head of the list
  *
- * Description: This function traverses a singly linked list and prints
- * each node's content. If the string is NULL, it prints "(nil)".
- * Returns: the number of nodes in the list
- *
  * Return: the number of nodes
  */
 size_t print_list(const list_t *h)

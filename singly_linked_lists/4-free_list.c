@@ -4,12 +4,7 @@
  * free_list - frees a list_t list
  * @head: pointer to the head of the list
  *
- * Description: This function frees all nodes in a singly linked list.
- * For each node, it first frees the string (str), then frees the node
- * itself, preventing memory leaks by saving the next pointer before
- * freeing the current node.
- *
- * Return: nothing (void)
+ * Return: void
  */
 void free_list(list_t *head)
 {
