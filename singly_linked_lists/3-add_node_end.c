@@ -23,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	/* Copy str*/
+	/* Copy str */
 	end->str = strdup(str);
 	if (end->str == NULL)
 	{
@@ -38,19 +38,19 @@ list_t *add_node_end(list_t **head, const char *str)
 	/* precise end pointer is last */
 	end->len = len;
 	end->next = NULL;
-	/* Check if at end of list*/
+	/* Check if at end of list */
 	if (*head == NULL)
 	{
 		*head = end;
 		return (end);
 	}
-	/* Progress through the list till last node*/
+	/* Progress through the list till last node */
 	temp = *head;
 	while (temp->next != NULL)
 	{
 		temp = temp->next;
 	}
-	/* Link last node at the end*/
+	/* Link last node at the end */
 	temp->next = end;
 	return (end);
 }
