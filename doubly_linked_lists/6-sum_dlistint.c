@@ -9,9 +9,11 @@
 int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0;
-	/* parcour la liste jusqu'au dernier noeud
-	* incrémente sum en renvoyant la valeur du node head
-	* repositionne head sur next */
+	/**
+	 * parcour la liste jusqu'au dernier noeud
+	 * incrémente sum en renvoyant la valeur du node head
+	 * repositionne head sur next
+	*/
 	while (head != NULL)
 	{
 		sum += head->n;
