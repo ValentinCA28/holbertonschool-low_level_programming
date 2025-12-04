@@ -11,5 +11,5 @@ int main(int argc, char *argv[])
 {
 	(void)argv; /* ignore argv car non utilise */
 	printf("%d\n", argc - 1); /* affiche nombre d'args sans le nom du prog */
-	return (0);
+return (0);
 }

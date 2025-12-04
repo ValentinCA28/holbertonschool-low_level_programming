@@ -11,5 +11,5 @@ int main(int argc, char *argv[])
 {
 	(void)argc; /* ignore argc car non utilise */
 	printf("%s\n", argv[0]); /* affiche le nom du programme */
-	return (0);
+return (0);
 }
