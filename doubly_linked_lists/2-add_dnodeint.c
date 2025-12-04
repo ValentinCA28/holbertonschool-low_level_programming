@@ -9,25 +9,21 @@
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new;
+	dlistint_t *new; /* nouveau noeud a creer */
 
-	/* Allocate space for new node */
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	new = malloc(sizeof(dlistint_t)); /* alloue memoire pour le noeud */
+	if (new == NULL) /* verifie si allocation reussie */
 	{
 		return (NULL);
 	}
-	/* Initialize new node + point to current head*/
-	new->n = n;
-	new->prev = NULL;
-	new->next = *head;
+	new->n = n; /* stocke la valeur */
+	new->prev = NULL; /* pas de noeud precedent (debut de liste) */
+	new->next = *head; /* pointe vers l'ancien premier noeud */
 
-	/* check if list null, update the position*/
-	if (*head != NULL)
+	if (*head != NULL) /* si liste non vide */
 	{
-		(*head)->prev = new;
+		(*head)->prev = new; /* ancien premier pointe vers le nouveau */
 	}
-	/* update head to point to the new node */
-	*head = new;
-	return (new);
+	*head = new; /* met a jour la tete de liste */
+	return (new); /* retourne le nouveau noeud */
 }

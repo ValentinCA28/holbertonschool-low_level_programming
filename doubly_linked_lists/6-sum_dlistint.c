@@ -8,16 +8,12 @@
  */
 int sum_dlistint(dlistint_t *head)
 {
-	int sum = 0;
-	/**
-	 * parcour la liste jusqu'au dernier noeud
-	 * incrémente sum en renvoyant la valeur du node head
-	 * repositionne head sur next
-	*/
-	while (head != NULL)
+	int sum = 0; /* somme des valeurs */
+
+	while (head != NULL) /* parcourt la liste */
 	{
-		sum += head->n;
-		head = head->next;
+		sum += head->n; /* ajoute la valeur du noeud */
+		head = head->next; /* passe au suivant */
 	}
-	return (sum);
+	return (sum); /* retourne la somme totale */
 }

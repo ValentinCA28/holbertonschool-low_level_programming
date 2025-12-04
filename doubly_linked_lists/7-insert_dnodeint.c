@@ -10,44 +10,44 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current;
-	dlistint_t *new;
-	unsigned int i;
+	dlistint_t *current; /* noeud courant */
+	dlistint_t *new; /* nouveau noeud */
+	unsigned int i; /* compteur de position */
 
-	if (idx == 0)
+	if (idx == 0) /* insertion au debut */
 	{
-		return (add_dnodeint(h, n));
+		return (add_dnodeint(h, n)); /* utilise add_dnodeint */
 	}
-	current = *h;
+	current = *h; /* commence au debut */
 	i = 0;
 
-	while (current != NULL && i < idx - 1)
+	while (current != NULL && i < idx - 1) /* cherche position idx-1 */
 	{
 		current = current->next;
 		i++;
 	}
-	if (current == NULL)
+	if (current == NULL) /* index hors limites */
 	{
 		return (NULL);
 	}
-	if (current->next == NULL)
+	if (current->next == NULL) /* insertion a la fin */
 	{
-		return (add_dnodeint_end(h, n));
+		return (add_dnodeint_end(h, n)); /* utilise add_dnodeint_end */
 	}
 
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	new = malloc(sizeof(dlistint_t)); /* alloue memoire */
+	if (new == NULL) /* verifie allocation */
 	{
 		return (NULL);
 	}
-	new->n = n;
-	new->next = current->next;
-	new->prev = current;
+	new->n = n; /* stocke la valeur */
+	new->next = current->next; /* nouveau pointe vers le suivant */
+	new->prev = current; /* nouveau pointe vers le precedent */
 
-	if (current->next != NULL)
+	if (current->next != NULL) /* si suivant existe */
 	{
-		current->next->prev = new;
+		current->next->prev = new; /* suivant pointe vers nouveau */
 	}
-	current->next = new;
-	return (new);
+	current->next = new; /* precedent pointe vers nouveau */
+	return (new); /* retourne le nouveau noeud */
 }

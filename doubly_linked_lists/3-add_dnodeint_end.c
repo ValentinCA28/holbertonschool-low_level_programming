@@ -8,33 +8,29 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new;
-	dlistint_t *end;
+	dlistint_t *new; /* nouveau noeud a creer */
+	dlistint_t *end; /* pointeur pour trouver la fin */
 
-	/* create a new node */
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	new = malloc(sizeof(dlistint_t)); /* alloue memoire */
+	if (new == NULL) /* verifie allocation */
 	{
 		return (NULL);
 	}
-	/* positionne sur le dernier node */
-	new->n = n;
-	new->next = NULL;
-	/* if list is empty -> new becomes head */
-	if (*head == NULL)
+	new->n = n; /* stocke la valeur */
+	new->next = NULL; /* pas de suivant (fin de liste) */
+
+	if (*head == NULL) /* si liste vide */
 	{
-		new->prev = NULL;
-		*head = new;
+		new->prev = NULL; /* pas de precedent */
+		*head = new; /* nouveau devient la tete */
 		return (new);
 	}
-	/* Find the current last node */
-	end = *head;
-	while (end->next != NULL)
+	end = *head; /* commence au debut */
+	while (end->next != NULL) /* cherche le dernier noeud */
 	{
 		end = end->next;
 	}
-	/* Link the new node at the end */
-	end->next = new;
-	new->prev = end;
+	end->next = new; /* lie le dernier au nouveau */
+	new->prev = end; /* nouveau pointe vers l'ancien dernier */
 	return (end);
 }

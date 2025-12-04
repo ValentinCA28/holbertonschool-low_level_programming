@@ -9,41 +9,37 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *current;
-	unsigned int i;
+	dlistint_t *current; /* noeud a supprimer */
+	unsigned int i; /* compteur de position */
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || *head == NULL) /* liste vide ou invalide */
 		return (-1);
 
-	current = *head;
+	current = *head; /* commence au debut */
 
-	/* go to the node at index */
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index; i++) /* cherche le noeud a l'index */
 	{
-		if (current == NULL)
+		if (current == NULL) /* index hors limites */
 			return (-1);
 		current = current->next;
 	}
 
-	/* check if index node exists */
-	if (current == NULL)
+	if (current == NULL) /* noeud n'existe pas */
 		return (-1);
 
-	/* delete if first node */
-	if (current->prev == NULL)
+	if (current->prev == NULL) /* suppression du premier noeud */
 	{
-		*head = current->next;
-		if (*head != NULL)
-			(*head)->prev = NULL;
+		*head = current->next; /* met a jour la tete */
+		if (*head != NULL) /* si nouveau premier existe */
+			(*head)->prev = NULL; /* pas de precedent */
 	}
-	else
+	else /* suppression au milieu ou fin */
 	{
-		/* link nodes */
-		current->prev->next = current->next;
-		if (current->next != NULL)
-			current->next->prev = current->prev;
+		current->prev->next = current->next; /* lie precedent au suivant */
+		if (current->next != NULL) /* si suivant existe */
+			current->next->prev = current->prev; /* lie suivant au precedent */
 	}
 
-	free(current);
-	return (1);
+	free(current); /* libere le noeud */
+	return (1); /* succes */
 }

@@ -9,19 +9,18 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *current;
-	unsigned int i = 0;
+	dlistint_t *current; /* noeud courant */
+	unsigned int i = 0; /* compteur de position */
 
-	current = head;
-	/* Check if list not empty, count using i with index */
-	while (current != NULL)
+	current = head; /* commence au debut */
+	while (current != NULL) /* parcourt la liste */
 	{
-		if (i == index)
+		if (i == index) /* si index trouve */
 		{
-			return (current);
+			return (current); /* retourne le noeud */
 		}
-		i++;
-		current = current->next;
+		i++; /* incremente la position */
+		current = current->next; /* passe au suivant */
 	}
-	return (NULL);
+	return (NULL); /* index non trouve */
 }

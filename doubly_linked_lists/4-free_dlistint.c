@@ -10,12 +10,12 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *current;
+	dlistint_t *current; /* noeud courant a liberer */
 
-	while (head != NULL)
+	while (head != NULL) /* parcourt la liste */
 	{
-		current = head;
-		head = head->next;
-		free(current);
+		current = head; /* sauvegarde le noeud actuel */
+		head = head->next; /* avance au suivant avant de liberer */
+		free(current); /* libere le noeud */
 	}
 }

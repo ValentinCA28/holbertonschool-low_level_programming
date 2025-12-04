@@ -8,12 +8,12 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t temp = 0;
+	size_t temp = 0; /* compteur de noeuds */
 
-	while (h != NULL)
+	while (h != NULL) /* parcourt la liste */
 	{
-		temp++;
-		h = h->next;
+		temp++; /* incremente le compteur */
+		h = h->next; /* passe au noeud suivant */
 	}
-	return (temp);
+	return (temp); /* retourne le nombre de noeuds */
 }
