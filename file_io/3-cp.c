@@ -1,19 +1,71 @@
 #include "main.h"
 #include <fcntl.h>
+
 #define BUFFER_SIZE 1024
+
+/**
+ * close_file - closes a file descriptor with error checking
+ * @fd: file descriptor to close
+ *
+ * Return: void
+ */
+void close_file(int fd)
+{
+	int result;
+
+	result = close(fd);
+	if (result == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
+ * copy_content - copies content from one file to another
+ * @fd_from: source file descriptor
+ * @fd_to: destination file descriptor
+ * @file_to: destination file name for error messages
+ * @file_from: source file name for error messages
+ *
+ * Return: void
+ */
+void copy_content(int fd_from, int fd_to, char *file_to, char *file_from)
+{
+	char buffer[BUFFER_SIZE];
+	ssize_t bytes_read, bytes_written;
+
+	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	{
+		bytes_written = write(fd_to, buffer, bytes_read);
+		if (bytes_written != bytes_read)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			close(fd_from);
+			close(fd_to);
+			exit(99);
+		}
+	}
+
+	if (bytes_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		close(fd_from);
+		close(fd_to);
+		exit(98);
+	}
+}
 
 /**
  * main - copies the content of a file to another file
  * @argc: argument count
- * @argv: argument vector
+ * @argv: argument vector (file_from file_to)
  *
  * Return: 0 on success, 97-100 on error
  */
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
-	char buffer[BUFFER_SIZE];
-	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
 	{
@@ -36,37 +88,10 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written != bytes_read)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_from);
-			close(fd_to);
-			exit(99);
-		}
-	}
+	copy_content(fd_from, fd_to, argv[2], argv[1]);
 
-	if (bytes_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
-	}
-
-	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
-		exit(100);
-	}
-
-	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
-		exit(100);
-	}
+	close_file(fd_from);
+	close_file(fd_to);
 
 	return (0);
 }
