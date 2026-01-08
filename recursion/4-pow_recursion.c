@@ -17,13 +17,16 @@
 int _pow_recursion(int x, int y)
 
 {
+	/* Si l'exposant est négatif, erreur */
 	if (y < 0)
 	{
 		return (-1);
 	}
+	/* Cas de base: x^0 = 1 */
 	if (y == 0)
 	{
 		return (1);
 	}
+		/* Cas récursif: x^y = x * x^(y-1) */
 		return (x * _pow_recursion(x, y - 1));
 }

@@ -10,10 +10,12 @@ size_t list_len(const list_t *h)
 {
 	size_t count = 0;
 
+	/* Parcourir la liste jusqu'à la fin */
 	while (h != NULL)
 	{
-		count++;
-		h = h->next;
+		count++; /* Compter chaque nœud */
+		h = h->next; /* Passer au nœud suivant */
 	}
+	/* Retourner le nombre total d'éléments */
 	return (count);
 }

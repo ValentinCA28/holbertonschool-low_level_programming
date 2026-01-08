@@ -16,9 +16,11 @@ void free_grid(int **grid, int height)
 {
 	int h;
 
+	/* Libérer chaque ligne du tableau 2D */
 	for (h = 0; h < height; h++)
 	{
 		free(grid[h]);
 	}
+	/* Libérer le tableau de pointeurs lui-même */
 	free(grid);
 }

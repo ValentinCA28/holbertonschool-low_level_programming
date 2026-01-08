@@ -11,10 +11,12 @@
  */
 void _puts(char *str)
 {
+	/* Parcourir la chaîne jusqu'au caractère nul */
 	while (*str != '\0')
 	{
-		_putchar(*str);
-		str++;
+		_putchar(*str); /* Afficher le caractère actuel */
+		str++; /* Passer au caractère suivant */
 	}
+	/* Afficher un retour à la ligne */
 	_putchar('\n');
 }

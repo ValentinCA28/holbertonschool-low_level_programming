@@ -14,13 +14,16 @@ void puts2(char *str)
 	int len = 0;
 	int i = 0;
 
+	/* Calculer la longueur de la chaîne */
 	while (str[len] != '\0')
 		len++;
 
+	/* Afficher un caractère sur deux (indices 0, 2, 4, etc.) */
 	while (i < len)
 	{
-		_putchar(str[i]);
-		i += 2;
+		_putchar(str[i]); /* Afficher le caractère */
+		i += 2; /* Sauter au caractère suivant (pas à pas de 2) */
 	}
+	/* Afficher un retour à la ligne */
 	_putchar('\n');
 }

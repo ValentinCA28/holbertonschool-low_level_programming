@@ -13,40 +13,40 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *temp;
 	unsigned int len = 0;
 
-	/* Create new node end */
+	/* Créer le nouveau nœud */
 	end = malloc(sizeof(list_t));
 	if (end == NULL)
 	{
 		return (NULL);
 	}
-	/* Copy str */
+	/* Dupliquer la chaîne */
 	end->str = strdup(str);
 	if (end->str == NULL)
 	{
-		free(end);
+		free(end); /* Libérer le nœud si strdup échoue */
 		return (NULL);
 	}
-	/* strlen */
+	/* Calculer la longueur de la chaîne */
 	while (str && str[len])
 	{
 		len++;
 	}
-	/* precise end pointer is last */
+	/* Initialiser les champs du nouveau nœud */
 	end->len = len;
-	end->next = NULL;
-	/* Check if at end of list */
+	end->next = NULL; /* Ce sera le dernier nœud */
+	/* Si la liste est vide, le nouveau nœud devient la tête */
 	if (*head == NULL)
 	{
 		*head = end;
 		return (end);
 	}
-	/* Progress through the list till last node */
+	/* Parcourir la liste jusqu'au dernier nœud */
 	temp = *head;
 	while (temp->next != NULL)
 	{
 		temp = temp->next;
 	}
-	/* Link last node at the end */
+	/* Lier le nouveau nœud à la fin */
 	temp->next = end;
 	return (end);
 }

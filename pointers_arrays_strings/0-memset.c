@@ -6,8 +6,7 @@
  *           pointed to by @s with the constant byte @b.
  *
  * @s: A pointer to the memory area to be filled.
- * @b: The character (byte) to fill the memory area with.
- * @n: The number of bytes to be filled.
+
  *
  * Return: A pointer to the memory area @s.
  */
@@ -16,9 +15,11 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
+	/* Remplir les n premiers octets avec le caractère b */
 	for (i = 0 ; i < n ; i++)
 	{
-		s[i] = b;
+		s[i] = b; /* Affecter b à chaque octet */
 	}
+	/* Retourner le pointeur vers la zone mémoire */
 	return (s);
 }

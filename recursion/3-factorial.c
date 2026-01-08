@@ -8,13 +8,16 @@
  */
 int factorial(int n)
 {
+	/* Si n est négatif, erreur (factorielle non définie) */
 	if (n < 0)
 	{
 		return (-1);
 	}
+	/* Cas de base: 0! = 1 */
 	if (n == 0)
 	{
 		return (1);
 	}
+	/* Cas récursif: n! = n * (n-1)! */
 	return (n * factorial(n - 1));
 }

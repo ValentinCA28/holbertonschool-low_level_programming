@@ -12,16 +12,19 @@ char *_strpbrk(char *s, char *accept)
 {
 	int i;
 
+	/* Parcourir la chaîne s */
 	while (*s != '\0')
 	{
+	/* Vérifier si le caractère actuel est dans accept */
 	for (i = 0; accept[i] != '\0'; i++)
 	{
 		if (*s == accept[i])
 		{
-			return (s);
+			return (s); /* Retourner un pointeur vers ce caractère */
 		}
 	}
-	s++;
+	s++; /* Passer au caractère suivant */
 	}
+	/* Aucun caractère correspondant trouvé */
 	return (NULL);
 }

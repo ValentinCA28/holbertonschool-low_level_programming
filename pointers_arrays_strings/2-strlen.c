@@ -13,12 +13,15 @@ int _strlen(char *s)
 {
 	int x;
 
+	/* Initialiser le compteur à 0 */
 	x = 0;
 
+	/* Parcourir la chaîne jusqu'au caractère nul */
 	while (*s != '\0')
 	{
-		s++;
-		x++;
+		s++; /* Passer au caractère suivant */
+		x++; /* Incrémenter le compteur */
 	}
+	/* Retourner la longueur de la chaîne */
 	return (x);
 }

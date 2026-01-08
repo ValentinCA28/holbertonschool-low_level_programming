@@ -13,17 +13,21 @@ char *_strchr(char *s, char c)
 
 {
 
+	/* Parcourir la chaîne caractère par caractère */
 	while (*s != '\0')
 	{
+		/* Si le caractère actuel correspond à c */
 		if (*s == c)
 		{
-			return (s);
+			return (s); /* Retourner un pointeur vers ce caractère */
 		}
-		s++;
+		s++; /* Passer au caractère suivant */
 	}
+	/* Si on cherche le caractère nul, le retourner */
 	if (c == '\0')
 	{
 		return (s);
 	}
+	/* Caractère non trouvé */
 	return (NULL);
 	}

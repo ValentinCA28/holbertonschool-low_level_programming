@@ -10,5 +10,6 @@
  */
 void reset_to_98(int *n)
 {
+	/* Modifier la valeur à l'adresse pointée par n pour qu'elle soit 98 */
 	*n = 98;
 }

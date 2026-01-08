@@ -7,14 +7,18 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int sum1 = 0;
-	int sum2 = 0;
+	int sum1 = 0; /* Somme de la diagonale principale */
+	int sum2 = 0; /* Somme de la diagonale secondaire */
 	int i;
 
+	/* Parcourir les diagonales */
 	for (i = 0; i < size; i++)
 	{
+		/* Diagonale principale (haut-gauche à bas-droite) */
 		sum1 += a[i * size + i];
+		/* Diagonale secondaire (haut-droite à bas-gauche) */
 		sum2 += a[i * size + (size - 1 - i)];
 	}
+	/* Afficher les deux sommes */
 	printf("%d, %d\n", sum1, sum2);
 }

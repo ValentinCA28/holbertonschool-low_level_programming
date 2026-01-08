@@ -16,14 +16,17 @@ int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
 
+	/* Comparer caractère par caractère jusqu'à trouver une différence */
 	while (s1[i] != '\0' && s2[i])
 	{
+		/* Si les caractères sont différents */
 		if (s1[i] != s2[i])
 		{
-			return (s1[i] - s2[i]);
+			return (s1[i] - s2[i]); /* Retourner la différence */
 		}
-		i++;
+		i++; /* Passer au caractère suivant */
 	}
 
+	/* Retourner la différence (0 si égales, sinon basé sur les longueurs) */
 	return (s1[i] - s2[i]);
 }

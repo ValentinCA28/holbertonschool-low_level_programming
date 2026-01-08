@@ -14,14 +14,16 @@ void print_rev(char *s)
 
 	int i = 0;
 
-
+	/* Trouver la longueur de la chaîne */
 	while (s[i])
 	{
 		i++;
 	}
+	/* Afficher la chaîne en sens inverse */
 	while (i--)
 	{
-		_putchar(s[i]);
+		_putchar(s[i]); /* Afficher le caractère à l'index i */
 	}
+	/* Afficher un retour à la ligne */
 	_putchar('\n');
 }

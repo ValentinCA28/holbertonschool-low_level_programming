@@ -14,23 +14,27 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *new;
 	unsigned int len = 0;
 
+	/* Vérifier que head n'est pas NULL */
 	if (!head)
 	{
 		return (NULL);
 	}
 
+	/* Allouer de la mémoire pour le nouveau nœud */
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 	{
 		return (NULL);
 	}
 
-	new->str = strdup(str); /* copie de str */
+	/* Dupliquer la chaîne str */
+	new->str = strdup(str);
 	if (new->str == NULL)
 	{
-		free(new);
+		free(new); /* Libérer le nœud si strdup échoue */
 		return (NULL);
 	}
+	/* Calculer la longueur de la chaîne */
 	if (str)
     {
         while (str[len])
@@ -38,8 +42,10 @@ list_t *add_node(list_t **head, const char *str)
     }
 	new->len = len;
 
+	/* Insérer le nouveau nœud au début de la liste */
 	new->next = *head;
 	*head = new;
 
+	/* Retourner l'adresse du nouveau nœud */
 	return (new);
 }
