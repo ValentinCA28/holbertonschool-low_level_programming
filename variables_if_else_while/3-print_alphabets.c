@@ -12,10 +12,12 @@ int main(void)
 {
 char c, i;
 
+/* Afficher l'alphabet en minuscule */
 for (i = 'a' ; i <= 'z'; i++)
 {
 putchar(i);
 }
+/* Afficher l'alphabet en majuscule */
 for (c = 'A'; c <= 'Z'; c++)
 {
 putchar(c);

@@ -7,6 +7,7 @@
 */
 int main(void)
 {
+/* Afficher la chaîne de caractères avec puts */
 puts("\"Programming is like building a multilingual puzzle");
 return (0);
 }

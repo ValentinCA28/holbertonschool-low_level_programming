@@ -12,6 +12,7 @@ int main(void)
 {
 int c;
 
+/* Afficher l'alphabet en ordre inverse (de z à a) */
 for (c = 'z'; c >= 'a' ; c--)
 {
 putchar(c);

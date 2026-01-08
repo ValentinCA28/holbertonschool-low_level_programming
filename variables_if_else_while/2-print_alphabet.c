@@ -11,6 +11,7 @@
 int main(void)
 {
 char c;
+/* Afficher l'alphabet en minuscule de a à z */
 for (c = 'a'; c <= 'z'; c++)
 putchar(c);
 putchar('\n');

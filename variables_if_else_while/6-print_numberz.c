@@ -11,9 +11,10 @@
 int main(void)
 {
 int n;
+/* Afficher les chiffres de 0 à 9 avec putchar */
 for (n = 0; n < 10; n++)
 {
-putchar(n + '0');
+putchar(n + '0'); /* Convertir le chiffre en caractère */
 }
 {
 putchar('\n');

@@ -11,6 +11,7 @@
 int main(void)
 {
 int n;
+/* Afficher les chiffres de 0 à 9 */
 for (n = 0; n < 10; n++)
 {
 printf("%d", n);
