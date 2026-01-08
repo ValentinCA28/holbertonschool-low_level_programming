@@ -9,5 +9,6 @@
 
 int add(int a, int b)
 {
+	/* Retourner la somme de a et b */
 	return (a + b);
 }

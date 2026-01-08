@@ -8,16 +8,18 @@
 int _isalpha(int c)
 
 {
+	/* Vérifier si c'est une minuscule */
 	if (c >= 'a' && c <= 'z')
 	{
-		return (1);
+		return (1); /* C'est une lettre minuscule */
 	}
+	/* Vérifier si c'est une majuscule */
 	else if (c >= 'A' && c <= 'Z')
 	{
-		return (1);
+		return (1); /* C'est une lettre majuscule */
 	}
 	else
 	{
-		return (0);
+		return (0); /* Ce n'est pas une lettre */
 	}
 }

@@ -8,9 +8,11 @@
 
 int _abs(int a)
 {
+	/* Si a est négatif, retourner sa valeur positive */
 	if (a < 0)
 	{
-		return (-a);
+		return (-a); /* Inverser le signe */
 	}
+	/* Sinon, retourner a tel quel */
 	return (a);
 }

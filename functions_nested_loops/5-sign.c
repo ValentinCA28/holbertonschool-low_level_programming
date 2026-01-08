@@ -9,19 +9,22 @@
 int print_sign(int n)
 
 {
+	/* Vérifier si n est positif */
 	if (n > 0)
 	{
-		_putchar('+');
+		_putchar('+'); /* Afficher le signe plus */
 		return (1);
 	}
+	/* Vérifier si n est zéro */
 	else if (n == 0)
 	{
-		_putchar('0');
+		_putchar('0'); /* Afficher zéro */
 		return (0);
 	}
+	/* n est négatif */
 	else
 	{
-		_putchar('-');
+		_putchar('-'); /* Afficher le signe moins */
 		return (-1);
 	}
 }

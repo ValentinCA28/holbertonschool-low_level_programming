@@ -8,12 +8,13 @@
 int _islower(int c)
 
 {
+/* Vérifier si c est entre 'a' et 'z' */
 if (c >= 'a' && c <= 'z')
 
-	return (1);
+	return (1); /* C'est une minuscule */
 
 else
 
-	return (0);
+	return (0); /* Ce n'est pas une minuscule */
 
 }

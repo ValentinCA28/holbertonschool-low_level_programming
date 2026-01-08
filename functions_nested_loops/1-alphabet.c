@@ -8,13 +8,16 @@
 void print_alphabet(void)
 
 {
+	/* Commencer par 'a' */
 	char c = 'a';
 
+	/* Parcourir de 'a' à 'z' */
 	while (c <= 'z')
 
 	{
-		_putchar(c);
-		c++;
+		_putchar(c); /* Afficher la lettre */
+		c++; /* Passer à la lettre suivante */
 	}
+	/* Afficher un retour à la ligne */
 	_putchar('\n');
 }
