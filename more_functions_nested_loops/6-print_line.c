@@ -13,13 +13,16 @@ void print_line(int n)
 {
 	int i;
 
+	/* Si n est négatif ou zéro, afficher seulement un retour à la ligne */
 	if (n <= 0)
 	{
 		_putchar('\n');
 		return;
 	}
 
+	/* Afficher n caractères underscore */
 	for (i = 0; i < n; i++)
 		_putchar('_');
+	/* Retour à la ligne */
 	_putchar('\n');
 }

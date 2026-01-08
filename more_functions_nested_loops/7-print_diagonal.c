@@ -15,19 +15,24 @@ void print_diagonal(int n)
 	int x;
 	int y;
 
+	/* Si n est négatif ou zéro, afficher seulement un retour à la ligne */
 	if (n <= 0)
 	{
 		_putchar('\n');
 		return;
 	}
+	/* Parcourir n lignes */
 	for (x = 0; x < n; x++)
 	{
+		/* Afficher x espaces avant le backslash */
 		for (y = 0; y < x; y++)
 		{
 			_putchar(' ');
 		}
 
+		/* Afficher le backslash */
 		_putchar('\\');
+		/* Retour à la ligne */
 		_putchar('\n');
 	}
 }

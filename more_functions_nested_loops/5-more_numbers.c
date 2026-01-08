@@ -13,14 +13,19 @@ void more_numbers(void)
 {
 	int x, c;
 
+	/* Répéter 10 fois */
 	for (x = 0; x < 10; x++)
 	{
+		/* Afficher les nombres de 0 à 14 */
 		for (c = 0; c <= 14; c++)
 		{
+			/* Si le nombre a 2 chiffres, afficher la dizaine */
 			if (c >= 10)
 				_putchar('0' + (c / 10));
+			/* Afficher l'unité */
 			_putchar('0' + (c % 10));
 		}
+		/* Retour à la ligne après chaque série */
 		_putchar('\n');
 	}
 }

@@ -16,20 +16,25 @@ void print_triangle(int size)
 	int y;
 	int z;
 
+	/* Si size est négatif ou zéro, afficher seulement un retour à la ligne */
 	if (size <= 0)
 	{
 		_putchar('\n');
 	}
+	/* Parcourir les lignes du triangle */
 	for (x = 1; x <= size; x++)
 	{
+		/* Afficher les espaces pour aligner à droite */
 		for (z = 0; z < size - x; z++)
 		{
 			_putchar(' ');
 		}
+		/* Afficher les # pour cette ligne */
 		for (y = 0; y < x; y++)
 		{
 			_putchar('#');
 		}
+		/* Retour à la ligne */
 		_putchar('\n');
 	}
 }

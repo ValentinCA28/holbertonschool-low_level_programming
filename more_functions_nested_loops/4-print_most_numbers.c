@@ -14,11 +14,14 @@ void print_most_numbers(void)
 
 	c = '0';
 
+	/* Parcourir les chiffres de 0 à 9 */
 	while (c <= '9')
 	{
+		/* Afficher uniquement si ce n'est ni 2 ni 4 */
 		if (c != '2' && c != '4')
 			_putchar(c);
 		c++;
 	}
+	/* Retour à la ligne */
 	_putchar('\n');
 }

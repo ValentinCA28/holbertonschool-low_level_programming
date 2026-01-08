@@ -11,5 +11,6 @@
 int mul(int a, int b)
 
 {
+	/* Retourner le produit de a et b */
 	return (a * b);
 }
