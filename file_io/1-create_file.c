@@ -15,27 +15,27 @@ int create_file(const char *filename, char *text_content)
 	ssize_t written;
 	unsigned int len = 0;
 
-	/* filename NULL → failure */
+	/* Si filename est NULL, échec */
 	if (filename == NULL)
 		return (-1);
 
-	/* Open: create + truncate + write only, permissions rw------- */
+	/* Ouvrir/créer: écriture seule, tronquer, permissions rw------- (0600) */
 	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
-	/* Case text_content == NULL → empty file */
+	/* Si text_content est NULL, créer un fichier vide */
 	if (text_content == NULL)
 	{
 		close(fd);
 		return (1);
 	}
 
-	/* Manual length calculation (no strlen allowed) */
+	/* Calculer la longueur du texte manuellement */
 	while (text_content[len])
 		len++;
 
-	/* Write the whole content */
+	/* Écrire tout le contenu dans le fichier */
 	written = write(fd, text_content, len);
 	if (written == -1 || (unsigned int)written != len)
 	{
@@ -43,6 +43,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
+	/* Fermer le fichier et retourner succès */
 	close(fd);
 	return (1);
 }

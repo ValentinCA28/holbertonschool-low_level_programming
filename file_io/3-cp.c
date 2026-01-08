@@ -13,7 +13,9 @@ void close_file(int fd)
 {
 	int result;
 
+	/* Fermer le descripteur de fichier */
 	result = close(fd);
+	/* Si la fermeture échoue, afficher l'erreur et sortir */
 	if (result == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
@@ -35,9 +37,12 @@ void copy_content(int fd_from, int fd_to, char *file_to, char *file_from)
 	char buffer[BUFFER_SIZE];
 	ssize_t bytes_read, bytes_written;
 
+	/* Lire et écrire par blocs de BUFFER_SIZE octets */
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
+		/* Écrire les octets lus dans le fichier de destination */
 		bytes_written = write(fd_to, buffer, bytes_read);
+		/* Si l'écriture échoue ou est incomplète */
 		if (bytes_written != bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
@@ -47,6 +52,7 @@ void copy_content(int fd_from, int fd_to, char *file_to, char *file_from)
 		}
 	}
 
+	/* Si la lecture échoue */
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
@@ -67,12 +73,14 @@ int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
 
+	/* Vérifier le nombre d'arguments */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
+	/* Ouvrir le fichier source en lecture seule */
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
@@ -80,6 +88,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	/* Créer/ouvrir le fichier destination en écriture, permissions rw-rw-r-- */
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
@@ -88,8 +97,10 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
+	/* Copier le contenu du fichier source vers le fichier destination */
 	copy_content(fd_from, fd_to, argv[2], argv[1]);
 
+	/* Fermer les deux fichiers */
 	close_file(fd_from);
 	close_file(fd_to);
 

@@ -15,14 +15,19 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int i;
 	va_list ptr;
 
+	/* Si aucun paramètre, retourner 0 */
 	if (n == 0)
 		return (0);
+	/* Initialiser la liste d'arguments variadiques */
 	va_start(ptr, n);
 
+	/* Parcourir tous les arguments et les additionner */
 	for (i = 0; i < n; i++)
 	{
-		sum += va_arg(ptr, int);
+		sum += va_arg(ptr, int); /* Récupérer l'argument suivant */
 	}
+	/* Nettoyer la liste d'arguments */
 	va_end(ptr);
+	/* Retourner la somme totale */
 	return (sum);
 }

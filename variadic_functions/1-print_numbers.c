@@ -14,17 +14,22 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	int x;
 
+	/* Initialiser la liste d'arguments */
 	va_start(args, n);
 
+	/* Parcourir et afficher tous les nombres */
 	for (i = 0; i < n; i++)
 	{
-		x = va_arg(args, int);
-		printf("%d", x);
+		x = va_arg(args, int); /* Récupérer le nombre */
+		printf("%d", x); /* Afficher le nombre */
+		/* Afficher le séparateur (si non-NULL et pas le dernier) */
 		if (separator != NULL && i < n - 1)
 		{
 			printf("%s", separator);
 		}
 	}
+	/* Afficher un retour à la ligne */
 	printf("\n");
+	/* Nettoyer la liste d'arguments */
 	va_end(args);
 }

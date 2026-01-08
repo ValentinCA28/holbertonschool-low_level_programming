@@ -12,13 +12,17 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
+	/* Vérifier les paramètres invalides */
 	if (array == NULL || cmp == NULL || size <= 0)
 		return (-1);
 
+	/* Parcourir le tableau */
 	for (i = 0; i < size; i++)
 	{
+		/* Si la fonction cmp retourne non-zéro, élément trouvé */
 		if (cmp(array[i]) != 0)
-			return (i);
+			return (i); /* Retourner l'index */
 	}
+	/* Aucune correspondance trouvée */
 	return (-1);
 }

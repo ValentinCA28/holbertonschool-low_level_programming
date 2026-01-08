@@ -22,34 +22,38 @@ void print_all(const char *const format, ...)
 {
 	va_list args;
 	int i = 0;
-	char *sep = "";
+	char *sep = ""; /* Séparateur (vide au début, ", " après) */
 
+	/* Initialiser la liste d'arguments */
 	va_start(args, format);
 
+	/* Parcourir la chaîne de format */
 	while (format && format[i])
 	{
+		/* Si c'est un spécificateur de format valide */
 		if (format[i] == 'c' || format[i] == 'i' ||
 			format[i] == 'f' || format[i] == 's')
 		{
-			printf("%s", sep);
-			sep = ", ";
+			printf("%s", sep); /* Afficher le séparateur */
+			sep = ", "; /* Après le premier, le séparateur devient ", " */
 		}
+		/* Traiter selon le type de format */
 		switch (format[i])
 		{
-		case 'c':
+		case 'c': /* Caractère */
 			printf("%c", va_arg(args, int));
 			break;
-		case 'i':
+		case 'i': /* Entier */
 			printf("%d", va_arg(args, int));
 			break;
-		case 'f':
+		case 'f': /* Flottant */
 			printf("%f", va_arg(args, double));
 			break;
-		case 's':
+		case 's': /* Chaîne */
 		{
 			char *str = va_arg(args, char *);
 
-			if (!str)
+			if (!str) /* Si NULL, afficher (nil) */
 				str = "(nil)";
 			printf("%s", str);
 			break;
@@ -57,6 +61,8 @@ void print_all(const char *const format, ...)
 		}
 		i++;
 	}
+	/* Afficher un retour à la ligne */
 	printf("\n");
+	/* Nettoyer la liste d'arguments */
 	va_end(args);
 }

@@ -10,6 +10,7 @@
  */
 int (*get_op_func(char *s))(int, int)
 {
+	/* Tableau des opérateurs et leurs fonctions correspondantes */
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -19,13 +20,17 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}};
 	int i = 0;
 
+	/* Parcourir le tableau d'opérateurs */
 	while (ops[i].op != NULL)
 	{
+		/* Si l'opérateur correspond et s est un caractère unique */
 		if (ops[i].op[0] == s[0] && s[1] == '\0')
 		{
+			/* Retourner le pointeur vers la fonction */
 			return (ops[i].f);
 		}
 		i++;
 	}
+	/* Opérateur non trouvé */
 	return (NULL);
 }

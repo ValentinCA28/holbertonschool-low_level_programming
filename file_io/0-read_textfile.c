@@ -13,13 +13,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t bytes_read, bytes_written;
 char *buffer;
 
+	/* Si filename est NULL, retourner 0 */
 	if (filename == NULL)
 		return (0);
 
+	/* Ouvrir le fichier en lecture seule */
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 
+/* Allouer un buffer pour stocker le contenu */
 buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 	{
@@ -27,6 +30,7 @@ buffer = malloc(sizeof(char) * letters);
 		return (0);
 	}
 
+	/* Lire letters octets du fichier dans le buffer */
 	bytes_read = read(fd, buffer, letters);
 	if (bytes_read == -1)
 	{
@@ -35,6 +39,7 @@ buffer = malloc(sizeof(char) * letters);
 		return (0);
 	}
 
+	/* Écrire le contenu lu sur la sortie standard */
 	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 	if (bytes_written == -1 || bytes_written != bytes_read)
 	{
@@ -43,7 +48,9 @@ buffer = malloc(sizeof(char) * letters);
 		return (0);
 	}
 
+	/* Libérer le buffer et fermer le fichier */
 	free(buffer);
 	close(fd);
+	/* Retourner le nombre d'octets écrits */
 	return (bytes_written);
 }

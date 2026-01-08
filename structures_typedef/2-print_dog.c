@@ -11,10 +11,12 @@
 */
 void print_dog(struct dog *d)
 {
+	/* Si le pointeur est NULL, ne rien faire */
 	if (d == NULL)
 	{
 		return;
 	}
+	/* Afficher le nom (ou (nil) si NULL) */
 	if (d->name == NULL)
 	{
 		printf("Name: (nil)\n");
@@ -23,7 +25,9 @@ void print_dog(struct dog *d)
 	{
 		printf("Name: %s\n", d->name);
 	}
+	/* Afficher l'âge */
 	printf("Age: %f\n", d->age);
+	/* Afficher le propriétaire (ou (nil) si NULL) */
 	if (d->owner == NULL)
 	{
 		printf("Owner: (nil)\n");

@@ -12,10 +12,13 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
 
+	/* Vérifier que array et action ne sont pas NULL */
 	if (array != NULL && action != NULL)
 	{
+		/* Parcourir chaque élément du tableau */
 		for (i = 0; i < size; i++)
 		{
+			/* Appeler la fonction action sur l'élément actuel */
 			action(array[i]);
 		}
 	}

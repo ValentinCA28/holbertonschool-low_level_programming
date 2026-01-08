@@ -11,8 +11,10 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	/* Si name ou f est NULL, ne rien faire */
 	if (name == NULL && f == NULL)
 		return;
 
+	/* Appeler la fonction pointée par f avec name comme argument */
 	f(name);
 }
